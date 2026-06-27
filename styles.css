@@ -8,9 +8,11 @@ html {
   box-sizing: inherit;
 }
 
+/* MAIN CONTAINER */
 #piano {
   background-color: rgb(46, 7, 109);
-  width: 992px;
+  width: 100%;              /* full width on all screens */
+  max-width: 992px;         /* desktop size limit */
   min-height: 400px;
   margin: 40px auto;
   padding: 90px 20px 20px 20px;
@@ -18,15 +20,17 @@ html {
   border-radius: 10px;
 }
 
+/* KEYS WRAPPER */
 .keys {
   background-color: rgb(46, 7, 109);
-  width: 949px;
+  width: 100%;              /* full width */
+  max-width: 949px;         /* desktop limit */
   height: 180px;
   padding-left: 2px;
   overflow: hidden;
-  position: center;
 }
 
+/* WHITE KEYS */
 .key {
   background-color: #ffffff;
   position: relative;
@@ -37,6 +41,7 @@ html {
   border-radius: 0 0 3px 3px;
 }
 
+/* BLACK KEYS */
 .key.black--key::after {
   background-color: #1d1e22;
   content: "";
@@ -47,6 +52,7 @@ html {
   border-radius: 0 0 3px 3px;
 }
 
+/* LOGO */
 h1.logo {
   top: 5px;
   left: 5px;
@@ -59,26 +65,33 @@ h1.logo {
   position: relative;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
   #piano {
-    width: 358px;
+    width: 100%;
+    max-width: 358px;
   }
 
   .keys {
-    width: 318px;
-    align-items: center;
-  }
-
-  @media (max-width: 1199px) and (min-width: 769px) {
-    #piano {
-      width: 675px;
-    }
-  }
-
-  .keys {
-    width: 633px;
+    width: 100%;
+    max-width: 318px;
   }
 }
+
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1199px) {
+  #piano {
+    width: 100%;
+    max-width: 675px;
+  }
+
+  .keys {
+    width: 100%;
+    max-width: 633px;
+  }
+}
+
+/* IMAGES */
 img {
   max-width: 100%;
   height: auto;
